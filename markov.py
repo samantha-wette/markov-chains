@@ -45,11 +45,38 @@ def make_chains(text_string):
     """
 
     chains = {}
+    pairs = ()
+    
+    #words = text_string.split()d
+    for i in range(0,len(text_string)-2):
+        #create pair in tuple
+        found = []
+        pairs = (text_string[i], text_string[i+1]) 
+        #add tuple as a key to the chains dictionary
+        if text_string[i] == pairs[0] and text_string[i+1] == pairs[1]:
+            value_to_add = text_string[i+2]
+            found.append(value_to_add)
+        chains[pairs] = found
+
+
+        
 
     # your code goes here
-
+    print(f'this be the {chains}')
     return chains
 
+    #make keys for the chain pairs
+    #key values are possible next word (sequence) to both values in key
+    #how to find next word after
+    #iterate and check next word
+    # for key in chains:
+    #     if key in text_string:
+    #         chains[key] = 
+
+    # for i in range(0,len(text_string)):
+        
+    #     if chains[key] == text_string[i]
+    #         chains[value] == text_string[i+1]
 
 def make_text(chains):
     """Return text from chains."""
