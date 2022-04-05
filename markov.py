@@ -10,9 +10,13 @@ def open_and_read_file(file_path):
     the file's contents as one string of text.
     """
 
-    # your code goes here
-
-    return 'Contents of your file as one long string'
+    full_file = open(file_path).read()
+    text_string = full_file.split()
+    
+    print(text_string)
+    return text_string
+    
+    #'Contents of your file as one long string'
 
 
 def make_chains(text_string):
@@ -69,3 +73,4 @@ chains = make_chains(input_text)
 random_text = make_text(chains)
 
 print(random_text)
+open_and_read_file(input_path)
